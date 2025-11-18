@@ -20,22 +20,22 @@ export default function Dashboard() {
   useEffect(() => {
     if (!userId) return;
 
-    fetch(`http://localhost:5000/api/notes/${userId}`)
+    fetch(`https://studo-qa4p.onrender.com/api/notes/${userId}`)
       .then((res) => res.json())
       .then((data) => setNotes(data || []))
       .catch((err) => console.error("Notes fetch error:", err));
 
-    fetch(`http://localhost:5000/api/tasks/${userId}`)
+    fetch(`https://studo-qa4p.onrender.com/api/tasks/${userId}`)
       .then((res) => res.json())
       .then((data) => setTasks(data || []))
       .catch((err) => console.error("Tasks fetch error:", err));
 
-    fetch(`http://localhost:5000/api/groups/${userId}`)
+    fetch(`https://studo-qa4p.onrender.com/api/groups/${userId}`)
       .then((res) => res.json())
       .then((data) => setGroups(data || []))
       .catch((err) => console.error("Groups fetch error:", err));
 
-    fetch(`http://localhost:5000/api/events/${userId}`)
+    fetch(`https://studo-qa4p.onrender.com/api/events/${userId}`)
       .then((res) => res.json())
       .then((data) => setEvents(data || []))
       .catch((err) => console.error("Events fetch error:", err));

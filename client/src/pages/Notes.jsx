@@ -10,7 +10,6 @@ export default function Notes() {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
 
-  // Fetch notes from backend
   useEffect(() => {
     async function load() {
       const data = await api.getNotes(userId);
@@ -32,7 +31,6 @@ export default function Notes() {
     setNotes(notes.filter((n) => n._id !== id));
   }
 
-  // ---------------------- PDF DOWNLOAD ----------------------
   function downloadPDF(note) {
     const doc = new jsPDF();
 
@@ -43,13 +41,11 @@ export default function Notes() {
     doc.setFont("helvetica", "normal");
     doc.setFontSize(12);
 
-    // Split text for long paragraphs
     const splitContent = doc.splitTextToSize(note.content, 180);
     doc.text(splitContent, 10, 35);
 
     doc.save(`${note.title}.pdf`);
   }
-  // ----------------------------------------------------------
 
   return (
     <div className="page-shell">

@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5000/api";
+const API_URL = "https://studo-qa4p.onrender.com/api";
 
 function getHeaders() {
   const token = localStorage.getItem("studoToken");
